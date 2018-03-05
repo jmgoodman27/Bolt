@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.5.2">Jekyll</generator><link href="http://localhost:4000/Bolt/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/Bolt/" rel="alternate" type="text/html" /><updated>2018-03-04T20:07:31-05:00</updated><id>http://localhost:4000/Bolt/</id><title type="html">Bolt</title><subtitle>A minimilist framework for rapid website development.</subtitle><entry><title type="html">Getting Started</title><link href="http://localhost:4000/Bolt/2017/10/30/getting-started/" rel="alternate" type="text/html" title="Getting Started" /><published>2017-10-30T19:57:19-04:00</published><updated>2017-10-30T19:57:19-04:00</updated><id>http://localhost:4000/Bolt/2017/10/30/getting-started</id><content type="html" xml:base="http://localhost:4000/Bolt/2017/10/30/getting-started/">&lt;h5 id=&quot;1-clone-or-download-bolt-from-github&quot;&gt;1. Clone or download Bolt from Github.&lt;/h5&gt;
+&lt;p&gt;You can access the repository from &lt;a href=&quot;https://github.com/jmgoodman27/Bolt&quot;&gt;https://github.com/jmgoodman27/Bolt&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h5 id=&quot;2-install-jekyll-and-dependencies&quot;&gt;2. Install Jekyll and dependencies&lt;/h5&gt;
+&lt;p&gt;Make sure you have Ruby installed by running:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;ruby -v
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;If you need to install Ruby, you can use &lt;a href=&quot;https://brew.sh/&quot;&gt;Homebrew&lt;/a&gt;:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;brew install ruby
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;We’ll be using &lt;a href=&quot;http://bundler.io/&quot;&gt;Bundler&lt;/a&gt; for installing all the Ruby gems we need:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;gem install bundler
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Once you have Bundler, it’ll locate the Gemfile in Bolt and automatically install the correct version of dependencies by running:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;bundle
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;We’ll be using Bundler to run our Jekyll commands. Check to see if Jekyll install correctly by running:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;bundle exec jekyll -v
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;You should get back version 3.5.2. If you have any issues installing, look at &lt;a href=&quot;https://jekyllrb.com/docs/installation/&quot;&gt;Jekyll’s documentation&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h5 id=&quot;3-serve-files-with-jekyll&quot;&gt;3. Serve files with Jekyll&lt;/h5&gt;
+
+&lt;p&gt;If everything installed correctly, you can start serving files:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;bundle exec jekyll serve
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;And if you want live reload capabilities:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;bundle exec jekyll serve --livereload
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;The easiest way to use it is with live reload’s &lt;a href=&quot;https://chrome.google.com/webstore/detail/livereload/jnihajbhpnppcggbcgedagnkighmdlei?hl=en&quot;&gt;Chrome extension&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;The server should be up and running at http://127.0.0.1:4000/Bolt/ (output will tell you the server address).&lt;/p&gt;
+
+&lt;h5 id=&quot;4-install-gulp-and-modules-optional&quot;&gt;4. Install Gulp and modules (optional)&lt;/h5&gt;
+
+&lt;p&gt;If you want to use Gulp to enhance performance, first make sure you have Node.js and NPM:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;node -v
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;To install node if needed:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;brew install node
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Now you can use NPM to install everything you need (it will install what is specified in the package.json file):&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;npm install
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;To use Gulp for a production build, run the following:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;bundle exec jekyll build
+gulp build
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h5 id=&quot;next-steps&quot;&gt;Next Steps&lt;/h5&gt;
+
+&lt;p&gt;Now that everything is installed and you know how to use basic commands, it’s time to get to work building your static website! With Bolt, you now have a starting point so you don’t have to waste any time with boilerplate stuff.&lt;/p&gt;</content><author><name></name></author><category term="Bolt" /><summary type="html">1. Clone or download Bolt from Github. You can access the repository from https://github.com/jmgoodman27/Bolt.</summary></entry></feed>

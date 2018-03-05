@@ -1,0 +1,32 @@
+{
+  "name": "bolt",
+  "version": "1.0.0",
+  "description": "A minimalist framework for rapid website development",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jmgoodman27/Bolt.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jmgoodman27/Bolt/issues"
+  },
+  "homepage": "https://github.com/jmgoodman27/Bolt#readme",
+  "dependencies": {
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^4.0.0",
+    "gulp-clean-css": "^3.9.0",
+    "gulp-git": "^2.5.2",
+    "gulp-imagemin": "^3.4.0",
+    "gulp-postcss": "^7.0.0",
+    "gulp-webserver": "^0.9.1",
+    "postcss-uncss": "^0.15.0",
+    "readline-sync": "^1.4.9",
+    "run-sequence": "^2.2.0",
+    "uncss": "^0.15.0"
+  }
+}

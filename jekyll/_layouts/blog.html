@@ -1,0 +1,45 @@
+---
+layout: default
+---
+<section>
+    <div class="flex flex--2">
+        <div class="">
+            <h2>Blog</h2>
+        </div>
+        <div class="right left--m">
+            {% include nav.html %}
+        </div>
+    </div>
+</section>
+<section class="b-color-grey">
+    <div class="flex align">
+        <div>
+            <p>Filters:</p>
+        </div>
+        <div>
+            <ul class="inline">
+                {% for tag in site.blog_tags %}
+                    {% assign tag_name = tag.tag | slugify %}
+                    {% assign link = "/blog/" | append: tag_name %}
+                    <li class="marg-r-sm {% if tag.title == page.title %}selected{% endif %}"><a href="{{ link | relative_url }}">{{ tag_name | capitalize }}</a></li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+    <div>
+        {% if page.title == "All" %}
+            {% assign posts = site.posts %}
+        {% else %}
+            {% assign posts = site.posts | where: 'tags', page.title %}
+        {% endif %}
+        {% for post in posts %}
+        <a href="{{ post.url | relative_url }}">
+            <div class="BlogPost">
+                <h3>{{ post.title }}</h3>
+                <p>{{ post.date | date: '%B %d, %Y' }}</p>
+                {% if post.description %}<p>{{ post.description }}</p>{% else %}<p>{{ post.excerpt | strip_html }}</p>{% endif %}
+            </div>
+        </a>
+        {% endfor %}
+    </div>
+</section>

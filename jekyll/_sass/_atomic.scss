@@ -1,0 +1,303 @@
+/*** Align ***/
+
+.center {
+    text-align: center;
+    margin-left:auto;
+    margin-right:auto;
+}
+.left {
+    text-align: left;
+}
+.right {
+    text-align: right;
+ }
+
+/*** Flex ***/
+
+.flex {
+    display: flex;
+    flex-wrap: wrap;
+}
+.flex > div {
+    margin-right: 3%;
+}
+//Specify number of elements in row
+@for $i from 2 through 5 {
+    .flex--#{$i} > div {
+        flex-basis: percentage((1 / $i) - (.03));;
+        flex-wrap: wrap;
+        @include mobile() {
+            flex-basis: 100%;
+        }
+    }
+}
+.spacing {
+    justify-content: space-between;
+}
+.space-evenly {
+    justify-content: space-evenly;
+}
+.align {
+    align-items: center;
+}
+.auto > div {
+    flex-grow: 1;
+    flex-shrink: 1;
+}
+
+/*** Floats ***/
+
+.float-none {
+    float:none !important;
+}
+.float-left {
+    float:left;
+}
+.float-right {
+    float:right;
+}
+
+/*** Displays ***/
+
+.overflow {
+    overflow: hidden;
+}
+.hidden {
+    display: none;
+}
+.inline > * {
+    display: inline-block;
+    padding-right:20px;
+    @include query($max, $half) {
+         padding-right:10px;
+     }
+}
+.block {
+    display: block;
+}
+.inline-block {
+    display: inline-block;
+}
+.hide {
+    display: none;
+}
+
+/*** Fonts/Colors ***/
+
+.font-header {
+    font-family: $fontHeader;
+}
+.font-body {
+    font-family: $fontBody;
+}
+.color-main {
+    color: $colorMain;
+}
+.color-white {
+    color:#fff;
+    &:hover {
+        color:#fff;
+    }
+}
+.color-black {
+    color:#000;
+    &:hover {
+        color:#000;
+    }
+}
+.b-color-main {
+    background-color:$colorMain;
+}
+.b-color-white {
+    background-color:#fff;
+}
+.b-color-black {
+    background-color:#000;
+}
+.b-color-grey {
+    background-color:$colorGrey;
+}
+
+/*** Font Size ***/
+
+.h0 {
+    font-size:3.3rem;
+}
+.h1 {
+    font-size:3rem;
+}
+.h2 {
+    font-size:2.2rem;
+}
+.h3 {
+    font-size:1.6rem;
+}
+.h4 {
+    font-size:1.4rem;
+}
+.h5 {
+    font-size:1.25rem;
+}
+.h6 {
+    font-size:1rem;
+}
+.p1 {
+    font-size:1.25rem;
+}
+.p2 {
+    font-size:1.15rem;
+}
+.p3 {
+    font-size:1.05rem;
+}
+
+/*** Style ***/
+
+.light {
+    font-weight:300;
+}
+.bold {
+    font-weight:600;
+}
+.italic {
+    font-style:italic;
+}
+.uppercase {
+    text-transform: uppercase;
+}
+
+.capitalize {
+    text-transform: capitalize;
+}
+.underline {
+    text-decoration: underline;
+}
+
+/*** Padding and Margins ***/
+
+$start: 20px;
+$type: (
+    margin: marg,
+    padding: pad
+);
+$directions: (
+  left: l,
+  right: r,
+  bottom: b,
+  top: t
+);
+$sizes: (
+  xl: $start * 4,
+  lg: $start * 3,
+  md: $start * 2,
+  sm: $start,
+  xs: $start - 10,
+  none: 0
+);
+// Create padding and margin modifier classes with Sass loops
+@each $type, $type-abr in $type {
+    // Left, right, bottom, top
+    @each $dir, $dir-abr in $directions {
+        @each $size, $val in $sizes {
+            .#{$type-abr}-#{$dir-abr}-#{$size} {
+                #{$type}-#{$dir}: $val;
+            }
+        }
+    }
+    // Top and bottom
+    @each $size, $val in $sizes {
+        .#{$type-abr}-tb-#{$size} {
+            #{$type}-top: $val;
+            #{$type}-bottom: $val;
+        }
+    }
+    // Left and right
+    @each $size, $val in $sizes {
+        .#{$type-abr}-lr-#{$size} {
+            #{$type}-left: $val;
+            #{$type}-right: $val;
+        }
+    }
+    // All directions
+    @each $size, $val in $sizes {
+        .#{$type-abr}-#{$size} {
+            #{$type}: $val;
+        }
+    }
+}
+//Images
+.center-img img {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+%img {
+    position: relative;
+    margin-top:20px;
+    margin-bottom:20px;
+}
+
+.img-xxl {
+    height:170px;
+    @extend %img;
+}
+.img-xl {
+    height:140px;
+    @extend %img;
+}
+.img-lg {
+    height:110px;
+    @extend %img;
+}
+.img-md {
+    height:80px;
+    @extend %img;
+}
+.img-sm {
+    height:50px;
+    @extend %img;
+}
+
+//Lists
+.list-bullets li {
+    list-style: disc;
+}
+.list-style-none {
+    list-style: none;
+    margin:0;
+}
+.list-bullets {
+    padding-left:20px;
+}
+
+// Code snippets
+.code-lg {
+    pre {
+        padding:30px 25px;
+    }
+}
+
+//Other
+.selected {
+    font-weight:bold;
+}
+.line-height {
+    line-height: 1.25;
+}
+
+//Media Queries
+@include mobile() {
+    .center--m {
+        text-align: center;
+    }
+    .right--m {
+        text-align: right;
+    }
+    .left--m {
+        text-align: left;
+    }
+}

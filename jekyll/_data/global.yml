@@ -1,0 +1,4 @@
+# Global variables (accessed by site.data)
+phone: phone_number #Example: Accessed by {{ site.data.global.phone }}
+email: your-email@domain.com
+address: address

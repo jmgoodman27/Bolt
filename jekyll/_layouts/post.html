@@ -1,0 +1,30 @@
+---
+layout: default
+---
+<section class="b-color-main color-white">
+    <div>
+        <p><a class="color-white" href="{{ "/blog/all" | relative_url }}">< Return to Blog</a></p>
+    </div>
+    <div class="align">
+        <div>
+            <h1 class="pad-tb-md capitalize">{{ page.title | capitalize }}</h1>
+        </div>
+    </div>
+    <div>
+        <p>{{ page.date | date: '%B %d, %Y' }}<br />
+            Tags:
+            {% for tag in page.tags %}
+                {% if forloop.last %}
+                  {{ tag }}
+                {% else %}
+                    {{ tag }},
+                {% endif %}
+            {% endfor %}
+        </p>
+    </div>
+</section>
+<section>
+    <div class="Post">
+        {{ content }}
+    </div>
+</section>

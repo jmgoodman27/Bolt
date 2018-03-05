@@ -1,0 +1,29 @@
+destination: docs
+source: jekyll
+
+# Project Info
+title: Bolt
+description: A minimilist framework for rapid website development.
+baseurl: /Bolt
+url: https://jmgoodman27.github.io
+permalink: pretty
+
+# Collections
+collections:
+  blog_tags:
+    output: true
+    permalink: /blog/:title
+
+# Build settings
+markdown: kramdown
+sass:
+    style: compressed
+    sass_dir: _sass
+highlighter: rouge
+theme:
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - gulpfile.js
+  - node_modules
+  - package.json

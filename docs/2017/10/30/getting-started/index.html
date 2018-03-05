@@ -1,0 +1,140 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Getting Started | Bolt</title>
+    <meta name="description" content="Tutorial for getting started with Bolt for Mac.">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/Bolt/assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Merriweather:300,400,700|Source+Sans+Pro:300,400" rel="stylesheet">
+</head>
+
+    <body>
+        <div class="container">
+            
+            <section class="b-color-main color-white">
+    <div>
+        <p><a class="color-white" href="/Bolt/blog/all">< Return to Blog</a></p>
+    </div>
+    <div class="align">
+        <div>
+            <h1 class="pad-tb-md capitalize">Getting started</h1>
+        </div>
+    </div>
+    <div>
+        <p>October 30, 2017<br />
+            Tags:
+            
+                
+                  Bolt
+                
+            
+        </p>
+    </div>
+</section>
+<section>
+    <div class="Post">
+        <h5 id="1-clone-or-download-bolt-from-github">1. Clone or download Bolt from Github.</h5>
+<p>You can access the repository from <a href="https://github.com/jmgoodman27/Bolt">https://github.com/jmgoodman27/Bolt</a>.</p>
+
+<h5 id="2-install-jekyll-and-dependencies">2. Install Jekyll and dependencies</h5>
+<p>Make sure you have Ruby installed by running:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>ruby -v
+</code></pre>
+</div>
+
+<p>If you need to install Ruby, you can use <a href="https://brew.sh/">Homebrew</a>:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>brew install ruby
+</code></pre>
+</div>
+
+<p>We’ll be using <a href="http://bundler.io/">Bundler</a> for installing all the Ruby gems we need:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>gem install bundler
+</code></pre>
+</div>
+
+<p>Once you have Bundler, it’ll locate the Gemfile in Bolt and automatically install the correct version of dependencies by running:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>bundle
+</code></pre>
+</div>
+
+<p>We’ll be using Bundler to run our Jekyll commands. Check to see if Jekyll install correctly by running:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>bundle exec jekyll -v
+</code></pre>
+</div>
+
+<p>You should get back version 3.5.2. If you have any issues installing, look at <a href="https://jekyllrb.com/docs/installation/">Jekyll’s documentation</a>.</p>
+
+<h5 id="3-serve-files-with-jekyll">3. Serve files with Jekyll</h5>
+
+<p>If everything installed correctly, you can start serving files:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>bundle exec jekyll serve
+</code></pre>
+</div>
+
+<p>And if you want live reload capabilities:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>bundle exec jekyll serve --livereload
+</code></pre>
+</div>
+
+<p>The easiest way to use it is with live reload’s <a href="https://chrome.google.com/webstore/detail/livereload/jnihajbhpnppcggbcgedagnkighmdlei?hl=en">Chrome extension</a>.</p>
+
+<p>The server should be up and running at http://127.0.0.1:4000/Bolt/ (output will tell you the server address).</p>
+
+<h5 id="4-install-gulp-and-modules-optional">4. Install Gulp and modules (optional)</h5>
+
+<p>If you want to use Gulp to enhance performance, first make sure you have Node.js and NPM:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>node -v
+</code></pre>
+</div>
+
+<p>To install node if needed:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>brew install node
+</code></pre>
+</div>
+
+<p>Now you can use NPM to install everything you need (it will install what is specified in the package.json file):</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>npm install
+</code></pre>
+</div>
+
+<p>To use Gulp for a production build, run the following:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>bundle exec jekyll build
+gulp build
+</code></pre>
+</div>
+
+<h5 id="next-steps">Next Steps</h5>
+
+<p>Now that everything is installed and you know how to use basic commands, it’s time to get to work building your static website! With Bolt, you now have a starting point so you don’t have to waste any time with boilerplate stuff.</p>
+
+    </div>
+</section>
+
+            
+            
+        </div>
+        <!-- Links to scripts go here -->
+
+    </body>
+    <footer>
+    <section class="b-color-main color-white">
+        <div>
+            <p class='copyright'> &copy; 2018 Bolt.<br /> Built by Jake Goodman.</p>
+        </div>
+    </section>
+</footer>
+
+</html>

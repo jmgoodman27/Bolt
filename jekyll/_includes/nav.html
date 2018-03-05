@@ -1,0 +1,15 @@
+<nav>
+    <ul class="inline pad-tb-sm">
+    {% assign pages = site.html_pages | sort: 'nav' %}
+    {% for p in pages %}
+    {% if p.nav %}
+        <li>
+            <a href="{{ p.url | relative_url }}" {% if p.url == page.url %} class="active" {% endif %}>
+                {{ p.title }}
+            </a>
+        </li>
+    {% endif %}
+    {% endfor %}
+    <li><a href="{{ "/blog/all" | relative_url }}" {% if page.url == "/blog/all" %} class="selected" {% endif %}>Blog</a></li>
+    </ul>
+</nav>

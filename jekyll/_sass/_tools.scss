@@ -1,0 +1,85 @@
+//Widths
+$siteWidth: 1500px;
+$sectionWidth: 85%;
+
+//Breakpoint
+$half: $siteWidth / 2;
+
+//Colors
+$colorMain: #4A8BF2;
+$divideLine: #d0d4d9;
+$colorFooter: #fff;
+$colorNav:#000;
+$colorWhite:#fff;
+$colorGrey:#F7F7F7;
+$link: $colorMain;
+
+//Fonts
+$fontHeader: 'Merriweather', Trebuchet, Verdana, Helvetica, Arial, sans-serif;
+$fontBody: 'Source Sans Pro', Trebuchet, Verdana, Helvetica, Arial, sans-serif;
+
+//Mixins
+$min: min-width;
+$max: max-width;
+@mixin query($constraint, $viewport1, $viewport2: null) {
+  @if $constraint == $min {
+    @media screen and ($min: $viewport1) {
+      @content;
+    }
+  } @else if $constraint == $max {
+    @media screen and ($max: $viewport1) {
+      @content;
+    }
+  } @else {
+    @media screen and ($min: $viewport1) and ($max: $viewport2) {
+      @content;
+    }
+  }
+}
+@mixin mobile() {
+    @media (max-width: $half) {
+        @content;
+    }
+}
+@mixin rounded($radius: 0.5em) {
+  -webkit-border-radius: .5em;
+  -moz-border-radius: .5em;
+  border-radius: .5em;
+}
+@mixin background-img($img-name) {
+    background-image: url('/assets/img/#{$img-name}');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+@mixin box-shadow($top, $left, $blur, $color, $inset: false) {
+  @if $inset {
+    -webkit-box-shadow:inset $top $left $blur $color;
+    -moz-box-shadow:inset $top $left $blur $color;
+    box-shadow:inset $top $left $blur $color;
+  } @else {
+    -webkit-box-shadow: $top $left $blur $color;
+    -moz-box-shadow: $top $left $blur $color;
+    box-shadow: $top $left $blur $color;
+  }
+}
+
+//Helpers
+@mixin pad($px) {
+    padding:$px;
+}
+@mixin pad-tb($px) {
+    padding-top:$px;
+    padding-bottom:$px;
+}
+@mixin pad-lr($px) {
+    padding-left:$px;
+    padding-right:$px;
+}
+@mixin marg-tb($px) {
+    margin-top:$px;
+    margin-bottom:$px;
+}
+@mixin marg-lr($px) {
+    margin-left:$px;
+    margin-right:$px;
+}
