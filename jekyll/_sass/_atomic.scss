@@ -14,47 +14,78 @@
 
 /*** Flex ***/
 
-.flex {
-    display: flex;
-    flex-wrap: wrap;
-}
-.flex > div {
-    margin-right: 3%;
-}
-//Specify number of elements in row
-@for $i from 2 through 5 {
-    .flex--#{$i} > div {
-        flex-basis: percentage((1 / $i) - (.03));;
+ .flex {
+     display: flex;
+     flex-wrap: wrap;
+ }
+ .flex > div {
+     margin-right: percentage($margin-flex);
+ }
+ // Let flex define widths based on content
+ .flex-auto > * {
+    flex-basis: 0;
+    flex-grow: 1;
+    flex-shrink: 1;
+    @include mobile() {
+        flex-basis: auto;
+    }
+ }
+// Define number of items in container manually
+ @for $i from 2 through 5 {
+    .flex-items-#{$i} > div {
+        flex-basis: percentage( (1 / $i) - $margin-flex);
         flex-wrap: wrap;
         @include mobile() {
             flex-basis: 100%;
         }
     }
 }
-.spacing {
+// Justify content
+.justify-around {
+    justify-content: space-around;
+}
+.justify-between {
     justify-content: space-between;
 }
-.space-evenly {
+.justify-evenly {
     justify-content: space-evenly;
 }
-.align {
-    align-items: center;
+.justify-center {
+    justify-content: center;
 }
-.auto > div {
-    flex-grow: 1;
-    flex-shrink: 1;
+.justify-start {
+    justify-content: flex-start;
+}
+.justify-end {
+    justify-content: flex-end;
+}
+// Align
+.align-start {
+    align-items: flex-start;
+}
+.align-end {
+    align-items: flex-end;
+}
+.align-stretch {
+    align-items: stretch;
+}
+.align-baseline {
+    align-items: baseline;
+}
+.align-center {
+    align-items: center;
 }
 
 /*** Floats ***/
 
 .float-none {
-    float:none !important;
+    float: none !important;
 }
 .float-left {
-    float:left;
+    float: left;
 }
 .float-right {
-    float:right;
+    float: right;
 }
 
 /*** Displays ***/
@@ -68,18 +99,12 @@
 .inline > * {
     display: inline-block;
     padding-right:20px;
-    @include query($max, $half) {
-         padding-right:10px;
-     }
 }
 .block {
     display: block;
 }
 .inline-block {
     display: inline-block;
-}
-.hide {
-    display: none;
 }
 
 /*** Fonts/Colors ***/
@@ -93,6 +118,12 @@
 .color-main {
     color: $colorMain;
 }
+.color-success {
+    color: $colorSuccess;
+}
+.color-error {
+    color: $colorError;
+}
 .color-white {
     color:#fff;
     &:hover {
@@ -104,6 +135,9 @@
     &:hover {
         color:#000;
     }
+}
+.color-link {
+    color:$colorLink;
 }
 .b-color-main {
     background-color:$colorMain;
@@ -120,35 +154,23 @@
 
 /*** Font Size ***/
 
-.h0 {
+.fs-xxxl {
     font-size:3.3rem;
 }
-.h1 {
+.fs-xxl {
     font-size:3rem;
 }
-.h2 {
-    font-size:2.2rem;
+.fs-xl {
+    font-size:2.3rem;
 }
-.h3 {
-    font-size:1.6rem;
+.fs-lg {
+    font-size:1.5rem;
 }
-.h4 {
-    font-size:1.4rem;
+.fs-md {
+    font-size:1.35rem;
 }
-.h5 {
-    font-size:1.25rem;
-}
-.h6 {
-    font-size:1rem;
-}
-.p1 {
-    font-size:1.25rem;
-}
-.p2 {
-    font-size:1.15rem;
-}
-.p3 {
-    font-size:1.05rem;
+.fs-sm {
+    font-size:1.2rem;
 }
 
 /*** Style ***/
@@ -165,7 +187,6 @@
 .uppercase {
     text-transform: uppercase;
 }
-
 .capitalize {
     text-transform: capitalize;
 }
@@ -175,6 +196,10 @@
 
 /*** Padding and Margins ***/
 
+/** Example:
+.marg-l-sm, .marg-r-lg, .marg-lr-xl, .marg-none
+.pad-tb-md
+**/
 $start: 20px;
 $type: (
     margin: marg,
@@ -199,13 +224,16 @@ $sizes: (
     // Left, right, bottom, top
     @each $dir, $dir-abr in $directions {
         @each $size, $val in $sizes {
+            // Ex: marg-t-sm
             .#{$type-abr}-#{$dir-abr}-#{$size} {
+                // Ex: margin-top: 20px;
                 #{$type}-#{$dir}: $val;
             }
         }
     }
     // Top and bottom
     @each $size, $val in $sizes {
+        // Ex: marg-tb-sm
         .#{$type-abr}-tb-#{$size} {
             #{$type}-top: $val;
             #{$type}-bottom: $val;
@@ -213,6 +241,7 @@ $sizes: (
     }
     // Left and right
     @each $size, $val in $sizes {
+        // Ex: marg-lr-sm
         .#{$type-abr}-lr-#{$size} {
             #{$type}-left: $val;
             #{$type}-right: $val;
@@ -220,6 +249,7 @@ $sizes: (
     }
     // All directions
     @each $size, $val in $sizes {
+        // Ex: marg-sm
         .#{$type-abr}-#{$size} {
             #{$type}: $val;
         }
@@ -234,35 +264,33 @@ $sizes: (
     right: 0;
     margin: auto;
 }
-
 %img {
     position: relative;
     margin-top:20px;
     margin-bottom:20px;
 }
-
-.img-xxl {
-    height:170px;
-    @extend %img;
-}
-.img-xl {
-    height:140px;
-    @extend %img;
-}
-.img-lg {
-    height:110px;
+.img-sm {
+    height:50px;
     @extend %img;
 }
 .img-md {
     height:80px;
     @extend %img;
 }
-.img-sm {
-    height:50px;
+.img-lg {
+    height:110px;
+    @extend %img;
+}
+.img-xl {
+    height:140px;
+    @extend %img;
+}
+.img-xxl {
+    height:170px;
     @extend %img;
 }
 
-//Lists
+// Lists
 .list-bullets li {
     list-style: disc;
 }
@@ -274,30 +302,45 @@ $sizes: (
     padding-left:20px;
 }
 
-// Code snippets
+// Code
 .code-lg {
     pre {
         padding:30px 25px;
     }
 }
 
-//Other
+// Min-height
+.min-height-sm {
+    min-height: 300px;
+}
+.min-height-md {
+    min-height: 500px;
+}
+.min-height-lg {
+    min-height: 700px;
+}
+
+// Other
 .selected {
     font-weight:bold;
 }
 .line-height {
     line-height: 1.25;
 }
+.cursor {
+    cursor: pointer;
+}
 
-//Media Queries
+// Media Queries
 @include mobile() {
-    .center--m {
-        text-align: center;
-    }
-    .right--m {
+    .m-right {
         text-align: right;
     }
-    .left--m {
+    .m-center {
+        text-align: center;
+    }
+    .m-left {
         text-align: left;
+        margin:0;
     }
 }

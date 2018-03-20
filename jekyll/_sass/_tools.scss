@@ -1,24 +1,30 @@
-//Widths
+// Widths
 $siteWidth: 1500px;
 $sectionWidth: 85%;
 
-//Breakpoint
+// Breakpoint
 $half: $siteWidth / 2;
 
-//Colors
+// Colors
 $colorMain: #4A8BF2;
+$colorSuccess: #4BB543;
+$colorError: #cc0000;
 $divideLine: #d0d4d9;
 $colorFooter: #fff;
 $colorNav:#000;
 $colorWhite:#fff;
 $colorGrey:#F7F7F7;
-$link: $colorMain;
+$colorLink: $colorMain;
 
-//Fonts
+// Fonts
 $fontHeader: 'Merriweather', Trebuchet, Verdana, Helvetica, Arial, sans-serif;
 $fontBody: 'Source Sans Pro', Trebuchet, Verdana, Helvetica, Arial, sans-serif;
 
-//Mixins
+
+// Other
+$margin_flex: .05;
+
+// Mixins
 $min: min-width;
 $max: max-width;
 @mixin query($constraint, $viewport1, $viewport2: null) {
@@ -61,25 +67,4 @@ $max: max-width;
     -moz-box-shadow: $top $left $blur $color;
     box-shadow: $top $left $blur $color;
   }
-}
-
-//Helpers
-@mixin pad($px) {
-    padding:$px;
-}
-@mixin pad-tb($px) {
-    padding-top:$px;
-    padding-bottom:$px;
-}
-@mixin pad-lr($px) {
-    padding-left:$px;
-    padding-right:$px;
-}
-@mixin marg-tb($px) {
-    margin-top:$px;
-    margin-bottom:$px;
-}
-@mixin marg-lr($px) {
-    margin-left:$px;
-    margin-right:$px;
 }
