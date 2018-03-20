@@ -14,32 +14,43 @@
 
 /*** Flex ***/
 
- .flex {
-     display: flex;
-     flex-wrap: wrap;
+  .flex {
+      display: flex;
+      flex-wrap: wrap;
+  }
+  .flex > div {
+      margin-right: percentage($margin-flex);
+  }
+  // Let flex define widths based on content
+  .flex-auto > * {
+     flex-basis: 0;
+     flex-grow: 1;
+     flex-shrink: 1;
+     @include mobile() {
+         flex-basis: auto;
+     }
+  }
+ // Define number of items in container manually
+  @for $i from 2 through 5 {
+     .items-#{$i} > div {
+         flex-basis: percentage( (1 / $i) - $margin-flex);
+         flex-wrap: wrap;
+         @include mobile() {
+             flex-basis: 100%;
+         }
+     }
  }
- .flex > div {
-     margin-right: percentage($margin-flex);
+ // Define width on flex elements manually
+ @for $i from 2 through 10 {
+     .basis-#{$i} {
+         flex-basis: (($i * 10) - ($margin-flex * 100)) * 1%;
+         flex-grow:1;
+         flex-shrink:1;
+         @include mobile() {
+             flex-basis: auto;
+         }
+     }
  }
- // Let flex define widths based on content
- .flex-auto > * {
-    flex-basis: 0;
-    flex-grow: 1;
-    flex-shrink: 1;
-    @include mobile() {
-        flex-basis: auto;
-    }
- }
-// Define number of items in container manually
- @for $i from 2 through 5 {
-    .flex-items-#{$i} > div {
-        flex-basis: percentage( (1 / $i) - $margin-flex);
-        flex-wrap: wrap;
-        @include mobile() {
-            flex-basis: 100%;
-        }
-    }
-}
 // Justify content
 .justify-around {
     justify-content: space-around;
