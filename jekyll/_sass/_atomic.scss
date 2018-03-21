@@ -34,9 +34,10 @@
   @for $i from 2 through 5 {
      .items-#{$i} > div {
          flex-basis: percentage( (1 / $i) - $margin-flex);
-         flex-wrap: wrap;
+         flex-grow:1;
+         flex-shrink:1;
          @include mobile() {
-             flex-basis: 100%;
+             flex-basis: auto;
          }
      }
  }
