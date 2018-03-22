@@ -88,6 +88,11 @@
     align-items: center;
 }
 
+// Other
+.nowrap {
+    flex-wrap: nowrap;
+}
+
 /*** Floats ***/
 
 .float-none {
@@ -276,30 +281,20 @@ $sizes: (
     right: 0;
     margin: auto;
 }
-%img {
-    position: relative;
-    margin-top:20px;
-    margin-bottom:20px;
-}
 .img-sm {
     height:50px;
-    @extend %img;
 }
 .img-md {
     height:80px;
-    @extend %img;
 }
 .img-lg {
     height:110px;
-    @extend %img;
 }
 .img-xl {
     height:140px;
-    @extend %img;
 }
 .img-xxl {
     height:170px;
-    @extend %img;
 }
 
 // Lists

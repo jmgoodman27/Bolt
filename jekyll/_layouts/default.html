@@ -2,14 +2,7 @@
 <html class="no-js" lang="">
     {% include head.html %}
     <body>
-        <div class="container">
-            {% comment %} {% include header.html %} {% endcomment %}
-            {{ content }}
-            {% if jekyll.environment == 'production' %}
-                {% include analytics.html %}.
-            {% endif %}
-            {% comment %} {% include footer.html %} {% endcomment %}
-        </div>
+        {{ content }}
         {% include scripts.html %}
     </body>
     {% include footer.html %}
