@@ -14,13 +14,6 @@ html {
 section {
   @extend .pad-tb-lg;
 }
-nav {
-  margin: 20px 0;
-  margin-left: auto;
-  margin-right: auto;
-  max-width: $maxSiteWidth;
-  width: $siteWidth;
-}
 //Default section width
 section>div {
   max-width: $maxSiteWidth;
