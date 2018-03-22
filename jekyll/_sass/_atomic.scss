@@ -14,44 +14,38 @@
 
 /*** Flex ***/
 
-  .flex {
-      display: flex;
-      flex-wrap: wrap;
-  }
-  .flex > div {
-      margin-right: percentage($margin-flex);
-  }
-  // Let flex define widths based on content
-  .flex-auto > * {
-     flex-basis: 0;
-     flex-grow: 1;
-     flex-shrink: 1;
-     @include mobile() {
-         flex-basis: auto;
-     }
-  }
- // Define number of items in container manually
-  @for $i from 2 through 5 {
-     .items-#{$i} > div {
-         flex-basis: percentage( (1 / $i) - $margin-flex);
-         flex-grow:1;
-         flex-shrink:1;
-         @include mobile() {
-             flex-basis: auto;
-         }
-     }
- }
- // Define width on flex elements manually
- @for $i from 2 through 10 {
-     .basis-#{$i} {
-         flex-basis: (($i * 10) - ($margin-flex * 100)) * 1%;
-         flex-grow:1;
-         flex-shrink:1;
-         @include mobile() {
-             flex-basis: auto;
-         }
-     }
- }
+.flex {
+    display: flex;
+    flex-wrap: wrap;
+}
+.flex > div {
+    margin-right: percentage($margin-flex);
+}
+// Let flex define widths based on content
+.flex-auto > * {
+    flex-basis: 0;
+    flex-grow: 1;
+    flex-shrink: 1;
+    @include mobile($break-md) {
+        flex-basis: auto;
+    }
+}
+// Define number of items in container manually
+@for $i from 2 through 5 {
+    .items-#{$i} > div {
+        flex-basis: percentage((1 / $i) - $margin-flex);
+        flex-grow: 0;
+        flex-shrink: 1;
+    }
+}
+// Define width on flex elements manually
+@for $i from 2 through 10 {
+    .basis-#{$i} {
+        flex-basis: (($i * 10) - ($margin-flex * 100)) * 1%;
+        flex-grow: 1;
+        flex-shrink: 1;
+    }
+}
 // Justify content
 .justify-around {
     justify-content: space-around;
@@ -187,7 +181,10 @@
     font-size:1.35rem;
 }
 .fs-sm {
-    font-size:1.2rem;
+    font-size: 1.24rem;
+}
+.fs-xs {
+    font-size: 1.1rem;
 }
 
 /*** Style ***/
@@ -316,6 +313,14 @@ $sizes: (
     }
 }
 
+// Readability
+.read {
+    p, h1, h2, h3, h4, h5, h6 {
+        margin: 15px 0;
+        line-height: 1.8;
+    }
+}
+
 // Min-height
 .min-height-sm {
     min-height: 300px;
@@ -338,8 +343,9 @@ $sizes: (
     cursor: pointer;
 }
 
+
 // Media Queries
-@include mobile() {
+@include mobile($break-md) {
     .m-right {
         text-align: right;
     }
@@ -348,6 +354,22 @@ $sizes: (
     }
     .m-left {
         text-align: left;
-        margin:0;
+        margin: 0;
     }
+}
+
+.m-flex-sm > div{
+    @include mobile($break-sm) {
+        flex-basis: auto;
+    } 
+}
+.m-flex-md > div {
+    @include mobile($break-md) {
+        flex-basis: auto;
+    } 
+}
+.m-flex-lg > div {
+    @include mobile($break-lg) {
+        flex-basis: auto;
+    } 
 }

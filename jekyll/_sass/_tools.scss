@@ -3,7 +3,9 @@ $maxSiteWidth: 1500px;
 $siteWidth: 75%;
 
 // Breakpoint
-$half: $siteWidth / 2;
+$break-sm: 400px;
+$break-md: 600px;
+$break-lg: 800px;
 
 // Colors
 $colorMain: #4A8BF2;
@@ -42,8 +44,8 @@ $max: max-width;
     }
   }
 }
-@mixin mobile() {
-    @media (max-width: $half) {
+@mixin mobile($break) {
+    @media (max-width: $break) {
         @content;
     }
 }
