@@ -1,7 +1,8 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.5.2">Jekyll</generator><link href="http://localhost:4000/Bolt/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/Bolt/" rel="alternate" type="text/html" /><updated>2018-03-22T17:11:14-04:00</updated><id>http://localhost:4000/Bolt/</id><title type="html">Bolt</title><subtitle>A minimilist framework for rapid website development.</subtitle><entry><title type="html">Getting Started</title><link href="http://localhost:4000/Bolt/2017/10/30/getting-started/" rel="alternate" type="text/html" title="Getting Started" /><published>2017-10-30T19:57:19-04:00</published><updated>2017-10-30T19:57:19-04:00</updated><id>http://localhost:4000/Bolt/2017/10/30/getting-started</id><content type="html" xml:base="http://localhost:4000/Bolt/2017/10/30/getting-started/">&lt;h5 id=&quot;1-clone-or-download-bolt-from-github&quot;&gt;1. Clone or download Bolt from Github.&lt;/h5&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.5.2">Jekyll</generator><link href="http://localhost:4000/Bolt/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/Bolt/" rel="alternate" type="text/html" /><updated>2018-03-22T17:31:01-04:00</updated><id>http://localhost:4000/Bolt/</id><title type="html">Bolt</title><subtitle>A minimilist framework for rapid website development.</subtitle><entry><title type="html">Getting Started</title><link href="http://localhost:4000/Bolt/2017/10/30/getting-started/" rel="alternate" type="text/html" title="Getting Started" /><published>2017-10-30T19:57:19-04:00</published><updated>2017-10-30T19:57:19-04:00</updated><id>http://localhost:4000/Bolt/2017/10/30/getting-started</id><content type="html" xml:base="http://localhost:4000/Bolt/2017/10/30/getting-started/">&lt;h4 id=&quot;1-clone-or-download-bolt-from-github&quot;&gt;1. Clone or download Bolt from Github.&lt;/h4&gt;
 &lt;p&gt;You can access the repository from &lt;a href=&quot;https://github.com/jmgoodman27/Bolt&quot;&gt;https://github.com/jmgoodman27/Bolt&lt;/a&gt;.&lt;/p&gt;
 
-&lt;h5 id=&quot;2-install-jekyll-and-dependencies&quot;&gt;2. Install Jekyll and dependencies&lt;/h5&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;h4 id=&quot;2-install-jekyll-and-dependencies&quot;&gt;2. Install Jekyll and dependencies&lt;/h4&gt;
 &lt;p&gt;Make sure you have Ruby installed by running:&lt;/p&gt;
 
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;ruby -v
@@ -34,7 +35,8 @@
 
 &lt;p&gt;You should get back version 3.5.2. If you have any issues installing, look at &lt;a href=&quot;https://jekyllrb.com/docs/installation/&quot;&gt;Jekyll’s documentation&lt;/a&gt;.&lt;/p&gt;
 
-&lt;h5 id=&quot;3-serve-files-with-jekyll&quot;&gt;3. Serve files with Jekyll&lt;/h5&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;h4 id=&quot;3-serve-files-with-jekyll&quot;&gt;3. Serve files with Jekyll&lt;/h4&gt;
 
 &lt;p&gt;If everything installed correctly, you can start serving files:&lt;/p&gt;
 
@@ -52,7 +54,8 @@
 
 &lt;p&gt;The server should be up and running at http://127.0.0.1:4000/Bolt/ (output will tell you the server address).&lt;/p&gt;
 
-&lt;h5 id=&quot;4-install-gulp-and-modules-optional&quot;&gt;4. Install Gulp and modules (optional)&lt;/h5&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;h4 id=&quot;4-install-gulp-and-modules-optional&quot;&gt;4. Install Gulp and modules (optional)&lt;/h4&gt;
 
 &lt;p&gt;If you want to use Gulp to enhance performance, first make sure you have Node.js and NPM:&lt;/p&gt;
 
@@ -78,7 +81,7 @@
 gulp build
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
-
-&lt;h5 id=&quot;next-steps&quot;&gt;Next Steps&lt;/h5&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;h4 id=&quot;next-steps&quot;&gt;Next Steps&lt;/h4&gt;
 
 &lt;p&gt;Now that everything is installed and you know how to use basic commands, it’s time to get to work building your static website! With Bolt, you now have a starting point so you don’t have to waste any time with boilerplate stuff.&lt;/p&gt;</content><author><name></name></author><category term="Bolt" /><summary type="html">1. Clone or download Bolt from Github. You can access the repository from https://github.com/jmgoodman27/Bolt.</summary></entry></feed>

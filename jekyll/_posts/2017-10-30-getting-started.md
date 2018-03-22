@@ -8,10 +8,11 @@ tags:
 ---
 
 
-##### 1. Clone or download Bolt from Github.
+#### 1. Clone or download Bolt from Github.
 You can access the repository from <https://github.com/jmgoodman27/Bolt>.
 
-##### 2. Install Jekyll and dependencies
+<br />
+#### 2. Install Jekyll and dependencies
 Make sure you have Ruby installed by running:
 
 ```
@@ -44,7 +45,8 @@ bundle exec jekyll -v
 
 You should get back version 3.5.2. If you have any issues installing, look at [Jekyll's documentation](https://jekyllrb.com/docs/installation/).
 
-##### 3. Serve files with Jekyll
+<br />
+#### 3. Serve files with Jekyll
 
 If everything installed correctly, you can start serving files:
 
@@ -62,8 +64,8 @@ The easiest way to use it is with live reload's [Chrome extension](https://chrom
 
 The server should be up and running at http://127.0.0.1:4000/Bolt/ (output will tell you the server address).
 
-
-##### 4. Install Gulp and modules (optional)
+<br />
+#### 4. Install Gulp and modules (optional)
 
 If you want to use Gulp to enhance performance, first make sure you have Node.js and NPM:
 
@@ -89,7 +91,7 @@ To use Gulp for a production build, run the following:
 bundle exec jekyll build
 gulp build
 ```
-
-##### Next Steps
+<br />
+#### Next Steps
 
 Now that everything is installed and you know how to use basic commands, it's time to get to work building your static website! With Bolt, you now have a starting point so you don't have to waste any time with boilerplate stuff.

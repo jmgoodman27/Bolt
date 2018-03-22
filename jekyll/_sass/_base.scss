@@ -4,16 +4,15 @@ body {
     font-family: $fontBody;
 }
 html {
-    font-size:16px;
-    line-height:1.3;
+    font-size:17px;
+    line-height:1.48;
 }
 .container {
     max-width: $siteWidth;
     margin: 0 auto;
 }
 section {
-  padding-top: 30px;
-  padding-bottom: 30px;
+  @extend .pad-tb-lg;
 }
 nav {
   margin: 20px 0;
@@ -33,6 +32,7 @@ section>div {
 
 h1, h2, h3, h4, h5, h6 {
     font-family: $fontHeader;
+    margin:0;
 }
 h1 {
     @extend .fs-xxl;
@@ -45,6 +45,9 @@ h3 {
 }
 h4 {
     @extend .fs-md;
+}
+h5 {
+  @extend .fs-sm;
 }
 
 /*** Links, Images, Lists ***/
