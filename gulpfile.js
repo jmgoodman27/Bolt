@@ -1,51 +1,44 @@
-var gulp = require('gulp');
+const gulp = require('gulp');
 // Adds vendor prefixes automatically (uses http://caniuse.com/)
-var autoprefixer = require('gulp-autoprefixer');
+const autoprefixer = require('gulp-autoprefixer');
 // Minifies CSS
-let cleanCSS = require('gulp-clean-css');
-// Needed to use Uncss
-var postcss = require('gulp-postcss');
+const cleanCSS = require('gulp-clean-css');
 // Removes unused CSS from stylesheet
-var uncss = require('postcss-uncss');
+const purify = require('gulp-purifycss');
 // Lossless optimization on images
-var imagemin = require('gulp-imagemin');
-// Runs gulp tasks one at a time
-var runSequence = require('run-sequence');
+const imagemin = require('gulp-imagemin');
 // Used to run Shell commands with Gulp
-var exec = require('child_process').exec;
-var readlineSync = require('readline-sync');
-var git = require('gulp-git');
+const exec = require('child_process').exec;
+const readlineSync = require('readline-sync');
+const git = require('gulp-git');
 
-
-// Minify, autoprefix, uncss
 gulp.task('css', function () {
-    var plugins = [
-       uncss({ html: ['docs/**/*.html']})
-   ];
-    return gulp.src('docs/assets/css/style.css')
+    return gulp.src('./docs/assets/css/style.css')
         .pipe(autoprefixer())
-        .pipe(postcss(plugins))
+        .pipe(purify(['./docs/*.html']))
         .pipe(cleanCSS())
-        .pipe(gulp.dest('docs/assets/css/'));
+        .pipe(gulp.dest('./docs/assets/css/'));
 });
 
-// Image compression task on images in /Jekyll
+// Compress images as end of build process
 gulp.task('images', function() {
-  return gulp.src('jekyll/assets/img/*', {base: "./"}) //Get all images
+  return gulp.src('./docs/assets/img/*') //Get all images
     .pipe(imagemin({
         progressive: true,
         svgoPlugins: [{ removeViewBox: false }],
 
     })) //Run compression
-    .pipe(gulp.dest("."));
+    .pipe(gulp.dest("./docs/assets/img/"));
 });
 
 // Run Shell command from gulp
-gulp.task('build', function() {
+gulp.task('build', function(done) {
     exec('bundle exec jekyll build').stdout.pipe(process.stdout);
+    done();
 });
-gulp.task('default', function() {
+gulp.task('serve', function(done) {
     exec('bundle exec jekyll serve').stdout.pipe(process.stdout);
+    done();
 });
 
 // Prompt for Git commit message and push to master
