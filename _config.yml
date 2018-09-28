@@ -4,7 +4,7 @@ source: jekyll
 # Project Info
 title: Bolt
 description: A minimilist framework for rapid website development.
-baseurl: /Bolt
+baseurl:
 url: https://jmgoodman27.github.io
 permalink: pretty
 
@@ -16,9 +16,6 @@ collections:
 
 # Build settings
 markdown: kramdown
-sass:
-    style: compressed
-    sass_dir: _sass
 highlighter: rouge
 theme:
 exclude:

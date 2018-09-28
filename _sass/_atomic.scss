@@ -1,3 +1,10 @@
+/* Contain */
+.contain {
+    max-width: $maxSiteWidth;
+    width: $siteWidth;
+    margin: 0 auto;
+}
+
 /*** Align ***/
 
 .center {

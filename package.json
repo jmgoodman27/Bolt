@@ -3,8 +3,7 @@
   "version": "1.0.0",
   "description": "A minimalist framework for rapid website development",
   "main": "index.js",
-  "scripts": {
-  },
+  "scripts": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/jmgoodman27/Bolt.git"
@@ -15,14 +14,20 @@
     "url": "https://github.com/jmgoodman27/Bolt/issues"
   },
   "homepage": "https://github.com/jmgoodman27/Bolt#readme",
-  "dependencies": {},
+  "dependencies": {
+  },
   "devDependencies": {
+    "browser-sync": "^2.24.7",
+    "postcss-import": "^12.0.0",
+    "autoprefixer": "^9.1.5",
+    "cssnano": "^4.1.4",
     "gulp": "github:gulpjs/gulp#4.0",
-    "gulp-autoprefixer": "^6.0.0",
-    "gulp-clean-css": "^3.10.0",
     "gulp-git": "^2.8.0",
     "gulp-imagemin": "^4.1.0",
-    "gulp-purifycss": "^0.2.0",
+    "gulp-postcss": "^8.0.0",
+    "gulp-purgecss": "^1.1.1",
+    "gulp-sourcemaps": "^2.6.4",
     "readline-sync": "^1.4.9",
+    "tailwindcss": "^0.6.6"
   }
 }
