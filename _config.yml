@@ -1,4 +1,4 @@
-destination: docs
+destination: dist
 source: jekyll
 
 # Project Info
@@ -16,6 +16,8 @@ collections:
 
 # Build settings
 markdown: kramdown
+plugins:
+  - jekyll-sitemap
 highlighter: rouge
 theme:
 exclude:

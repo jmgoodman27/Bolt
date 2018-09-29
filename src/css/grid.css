@@ -1,0 +1,5 @@
+@responsive {
+    .grid {
+      display:grid;
+    }
+  }

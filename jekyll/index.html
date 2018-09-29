@@ -3,25 +3,25 @@ layout: default
 title: Home
 nav: 1
 ---
-<section class="bg-black">
-    <div class="text-white center">
+<section class="bg-blue-light p-10">
+    <div class="container text-white justify-center text-center">
         <h1 class="text-5xl"><img src='{{ 'assets/img/bolt.png' | relative_url }}'/> Bolt</h1>
-        <p class="text-lg light italic">A minimalist framework for rapid website development.</p>
-        <p>
-            <a href="https://github.com/jmgoodman27/Bolt" class="BtnWhite">Github</a>
+        <p class="text-lg light italic justify-center">A minimalist framework for rapid website development.</p>
+        <p class="m-4">
+            <a href="https://github.com/jmgoodman27/Bolt" class="bg-white hover:bg-blue-dark text-blue-light font-bold py-2 px-4 rounded">Github</a>
         </p>
     </div>
 </section>
 <section>
-    <div class="pad-xs flex align-center">
+    <div class="container p-10 flex">
         <div class="basis-7">
             <h2>What is Bolt?</h2>
             <p>Bolt is a framework for building fast, responsive websites using Jekyll, Sass, and <a class="_color-main" href="https://github.com/jmgoodman27/Bolt/blob/master/gulpfile.js">Gulp</a>.</p>
         </div>
         <div class="flex justify-start marg-t-sm">
-            <img class="img-md marg-r-sm" src="{{ 'assets/img/jekyll.png' | relative_url }}" alt="Jekyll">
-            <img class="img-md marg-r-sm" src="{{ 'assets/img/sass.png' | relative_url }}" alt="Sass">
-            <img class="img-md marg-r-sm" src="{{ 'assets/img/gulp.png' | relative_url }}" alt="Gulp">
+            <img src="{{ 'assets/img/jekyll.png' | relative_url }}" alt="Jekyll">
+            <img src="{{ 'assets/img/sass.png' | relative_url }}" alt="Sass">
+            <img src="{{ 'assets/img/gulp.png' | relative_url }}" alt="Gulp">
         </div>
     </div>
 </section>

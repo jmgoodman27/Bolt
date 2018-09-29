@@ -195,29 +195,13 @@ module.exports = {
   */
 
   fonts: {
-    'sans': [
-      'system-ui',
-      'BlinkMacSystemFont',
-      '-apple-system',
-      // 'Segoe UI',
+    'header': [
       'Roboto',
       'Oxygen',
-      'Ubuntu',
-      'Cantarell',
-      'Fira Sans',
-      'Droid Sans',
-      'Helvetica Neue',
       'sans-serif',
     ],
-    'serif': [
-      // 'Constantia',
-      // 'Lucida Bright',
-      // 'Lucidabright',
-      // 'Lucida Serif',
-      'Lucida',
-      // 'DejaVu Serif',
-      // 'Bitstream Vera Serif',
-      // 'Liberation Serif',
+    'body': [
+      'Helvetica Neue',
       'Georgia',
       'serif',
     ],
@@ -929,8 +913,8 @@ module.exports = {
 
   plugins: [
     require('tailwindcss/plugins/container')({
-      // center: true,
-      // padding: '1rem',
+      center: true,
+      padding: '1rem',
     }),
   ],
 

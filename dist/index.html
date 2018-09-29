@@ -8,31 +8,55 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="/assets/css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Merriweather:300,400,700|Source+Sans+Pro:300,400" rel="stylesheet">
+    <script defer src="/assets/js/bundle.js"></script>
 </head>
 
     <body>
+        <nav class="flex items-center justify-between flex-wrap bg-teal p-6">
+    <div class="flex items-center flex-no-shrink text-white mr-6">
+        <svg class="fill-current h-8 w-8 mr-2" width="54" height="54" viewBox="0 0 54 54" xmlns="http://www.w3.org/2000/svg"><path d="M13.5 22.1c1.8-7.2 6.3-10.8 13.5-10.8 10.8 0 12.15 8.1 17.55 9.45 3.6.9 6.75-.45 9.45-4.05-1.8 7.2-6.3 10.8-13.5 10.8-10.8 0-12.15-8.1-17.55-9.45-3.6-.9-6.75.45-9.45 4.05zM0 38.3c1.8-7.2 6.3-10.8 13.5-10.8 10.8 0 12.15 8.1 17.55 9.45 3.6.9 6.75-.45 9.45-4.05-1.8 7.2-6.3 10.8-13.5 10.8-10.8 0-12.15-8.1-17.55-9.45-3.6-.9-6.75.45-9.45 4.05z"/></svg>
+        <span class="font-semibold text-xl tracking-tight">Tailwind CSS</span>
+    </div>
+    <div class="block sm:hidden" onClick="window.toggleMenu()">
+        <button class="flex items-center px-3 py-2 border rounded text-white border-white">
+        <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Menu</title><path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/></svg>
+        </button>
+    </div>
+    <div id="topNav" class="flex-wrap hidden w-full text-center sm:text-right sm:flex">
+        
+        
+        
+            <a class="block text-white mt-4 w-full p-3 sm:w-3 lg:inline-block lg:mt-0 text-teal-lighter hover:text-white mr-4" href="/"  class="active" >
+                Home
+            </a>
+        
+        
+        <a class="block text-white mt-4 lg:inline-block lg:mt-0 text-teal-lighter hover:text-white mr-4" href="/blog/all" >Blog</a>
+    </div>
+</nav>
+
         <!--[if lte IE 9]>
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
         <![endif]-->
-        <section class="bg-black">
-    <div class="text-white center">
+        <section class="bg-blue-light p-10">
+    <div class="container text-white justify-center text-center">
         <h1 class="text-5xl"><img src='/assets/img/bolt.png'/> Bolt</h1>
-        <p class="text-lg light italic">A minimalist framework for rapid website development.</p>
-        <p>
-            <a href="https://github.com/jmgoodman27/Bolt" class="BtnWhite">Github</a>
+        <p class="text-lg light italic justify-center">A minimalist framework for rapid website development.</p>
+        <p class="m-4">
+            <a href="https://github.com/jmgoodman27/Bolt" class="bg-white hover:bg-blue-dark text-blue-light font-bold py-2 px-4 rounded">Github</a>
         </p>
     </div>
 </section>
 <section>
-    <div class="pad-xs flex align-center">
+    <div class="container p-10 flex">
         <div class="basis-7">
             <h2>What is Bolt?</h2>
             <p>Bolt is a framework for building fast, responsive websites using Jekyll, Sass, and <a class="_color-main" href="https://github.com/jmgoodman27/Bolt/blob/master/gulpfile.js">Gulp</a>.</p>
         </div>
         <div class="flex justify-start marg-t-sm">
-            <img class="img-md marg-r-sm" src="/assets/img/jekyll.png" alt="Jekyll">
-            <img class="img-md marg-r-sm" src="/assets/img/sass.png" alt="Sass">
-            <img class="img-md marg-r-sm" src="/assets/img/gulp.png" alt="Gulp">
+            <img src="/assets/img/jekyll.png" alt="Jekyll">
+            <img src="/assets/img/sass.png" alt="Sass">
+            <img src="/assets/img/gulp.png" alt="Gulp">
         </div>
     </div>
 </section>

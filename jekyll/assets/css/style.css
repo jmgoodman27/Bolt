@@ -620,6 +620,10 @@ table {
 
 .container {
   width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 1rem;
+  padding-left: 1rem;
 }
 
 @media (min-width: 576px) {
@@ -2200,12 +2204,12 @@ table {
   clear: both;
 }
 
-.font-sans {
-  font-family: system-ui, BlinkMacSystemFont, -apple-system, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+.font-header {
+  font-family: Roboto, Oxygen, sans-serif;
 }
 
-.font-serif {
-  font-family: Lucida, Georgia, serif;
+.font-body {
+  font-family: Helvetica Neue, Georgia, serif;
 }
 
 .font-mono {
@@ -5003,6 +5007,16 @@ table {
   * @import "utilities/skew-transforms";
   */
 
+/** Custom CSS **/
+
+a {
+  text-decoration: none;
+}
+
+.grid {
+  display: grid;
+}
+
 @media (min-width: 576px) {
   .sm\:list-reset {
     list-style: none;
@@ -6535,12 +6549,12 @@ table {
     clear: both;
   }
 
-  .sm\:font-sans {
-    font-family: system-ui, BlinkMacSystemFont, -apple-system, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  .sm\:font-header {
+    font-family: Roboto, Oxygen, sans-serif;
   }
 
-  .sm\:font-serif {
-    font-family: Lucida, Georgia, serif;
+  .sm\:font-body {
+    font-family: Helvetica Neue, Georgia, serif;
   }
 
   .sm\:font-mono {
@@ -9306,6 +9320,10 @@ table {
   .sm\:z-auto {
     z-index: auto;
   }
+
+  .sm\:grid {
+    display: grid;
+  }
 }
 
 @media (min-width: 768px) {
@@ -10840,12 +10858,12 @@ table {
     clear: both;
   }
 
-  .md\:font-sans {
-    font-family: system-ui, BlinkMacSystemFont, -apple-system, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  .md\:font-header {
+    font-family: Roboto, Oxygen, sans-serif;
   }
 
-  .md\:font-serif {
-    font-family: Lucida, Georgia, serif;
+  .md\:font-body {
+    font-family: Helvetica Neue, Georgia, serif;
   }
 
   .md\:font-mono {
@@ -13611,6 +13629,10 @@ table {
   .md\:z-auto {
     z-index: auto;
   }
+
+  .md\:grid {
+    display: grid;
+  }
 }
 
 @media (min-width: 992px) {
@@ -15145,12 +15167,12 @@ table {
     clear: both;
   }
 
-  .lg\:font-sans {
-    font-family: system-ui, BlinkMacSystemFont, -apple-system, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  .lg\:font-header {
+    font-family: Roboto, Oxygen, sans-serif;
   }
 
-  .lg\:font-serif {
-    font-family: Lucida, Georgia, serif;
+  .lg\:font-body {
+    font-family: Helvetica Neue, Georgia, serif;
   }
 
   .lg\:font-mono {
@@ -17915,6 +17937,10 @@ table {
 
   .lg\:z-auto {
     z-index: auto;
+  }
+
+  .lg\:grid {
+    display: grid;
   }
 }
 

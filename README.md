@@ -1,11 +1,20 @@
 # Bolt
 
-A minimalist framework for rapid website development built with Jekyll, Sass, and Gulp.
+A starting point for rapid website development.
+
+Tools used:
+- Jekyll
+- Gulp
+- Webpack
+- PostCSS
+- Tailwind CSS
 
 ## Getting Started
 
 ### 1. Clone or download Bolt from Github.
-You can access the repository from <https://github.com/jmgoodman27/Bolt>.
+```
+git clone https://github.com/jmgoodman27/Bolt
+```
 
 ### 2. Install Jekyll and dependencies
 Make sure you have Ruby installed by running:
@@ -26,13 +35,13 @@ We'll be using [Bundler](http://bundler.io/) for installing all the Ruby gems we
 gem install bundler
 ```
 
-Once you have Bundler, it'll locate the Gemfile in Bolt and automatically install the correct version of dependencies by running:
+Bundler will locate the Gemfile and automatically install the correct version of dependencies when you run:
 
 ```
 bundle
 ```
 
-We'll be using Bundler to run our Jekyll commands. Check to see if Jekyll install correctly by running:
+We'll be using Bundler to run our Jekyll commands. Check to see if Jekyll installed correctly by running:
 
 ```
 bundle exec jekyll -v
@@ -40,48 +49,58 @@ bundle exec jekyll -v
 
 You should get back version 3.5.2. If you have any issues installing, look at [Jekyll's documentation](https://jekyllrb.com/docs/installation/).
 
-### 3. Serve files with Jekyll
+### 3. Install npm modules
 
-If everything installed correctly, you can start serving files:
-
-```
-bundle exec jekyll serve
-```
-
-And if you want live reload capabilities:
-
-```
-bundle exec jekyll serve --livereload
-```
-
-The easiest way to use it is with live reload's [Chrome extension](https://chrome.google.com/webstore/detail/livereload/jnihajbhpnppcggbcgedagnkighmdlei?hl=en).
-
-The server should be up and running at http://127.0.0.1:4000/Bolt/ (output will tell you the server address).
-
-
-### 4. Install Gulp and modules (optional)
-
-If you want to use Gulp to enhance performance, first make sure you have Node.js and NPM:
-
+Check to make sure you have Node installed: 
 ```
 node -v
 ```
 
-To install node if needed:
+If you don't have Node, install it with Homebrew:
 
 ```
 brew install node
 ```
 
-Now you can use NPM to install everything you need (it will install what is specified in the package.json file):
+Now let install dependencies with npm: 
 
 ```
 npm install
 ```
 
-To use Gulp for a production build, run the following:
+## Project Structure
 
-```
-bundle exec jekyll build
-gulp build
-```
+Folders:
+- dist: output of static files to run both locally and on production
+- src: contains CSS and JS before running through PostCSS and Webpack
+- jekyll: all Jekyll files, layouts, posts, and includes live here
+
+Src Files:
+- src/css/tailwind.js: file to configure output for CSS
+- src/css/style.css: main CSS file that uses PostCSS imports
+- src/js/index.js: entry point for Webpack
+
+## Gulp
+
+Gulp controls the build process and utilizes commands and plugins from Jekyll, PostCSS, and Webpack. 
+
+Running "gulp" will first run a build of the site and then start a local Jekyll server with Browsersync for live reload. CSS is generated on build through PostCSS and will auto-generate when any CSS is updated in the src/css/ folder. JS is bundled on build through Webpack and will auto-generate a new bundle when index.js entry point is updated.
+
+When ready for deployment, simply run "gulp production" to clean the dist folder and generate a production build. This will make sure to minify code, compress images, and also remove unused CSS. 
+
+"gulp git" will run commands to commit and push to your remote repository with a custom commit message. 
+
+Additional PostCSS plugins can be added easily through Gulp.
+
+## Tailwind CSS
+
+Tailwind CSS generates utility classes and can be configured with tailwind.js. It provides base styles out of the box as well, but additional CSS can be written and imported into style.css. Documentation for Tailwind CSS can be found here: [https://tailwindcss.com/docs/what-is-tailwind/](https://tailwindcss.com/docs/what-is-tailwind/). 
+
+## Other Features
+
+- Webpack 4: used to build and transpile (with Babel) JS with a 0 config setup through npm scripts.
+- Jekyll Sitemap: Auto generate sitemap on Jekyll build
+- Parts of HTML5 Boilerplate are used in Jekyll
+- Jekyll is blog ready
+- humans.txt and robots.txt and both included
+
