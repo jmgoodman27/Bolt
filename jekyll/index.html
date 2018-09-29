@@ -3,81 +3,31 @@ layout: default
 title: Home
 nav: 1
 ---
-<section class="bg-blue-light p-10">
-    <div class="container text-white justify-center text-center">
-        <h1 class="text-5xl"><img src='{{ 'assets/img/bolt.png' | relative_url }}'/> Bolt</h1>
-        <p class="text-lg light italic justify-center">A minimalist framework for rapid website development.</p>
-        <p class="m-4">
-            <a href="https://github.com/jmgoodman27/Bolt" class="bg-white hover:bg-blue-dark text-blue-light font-bold py-2 px-4 rounded">Github</a>
+<section class="bg-main">
+    <div class="container p-xl text-white justify-center text-center">
+        <h1 class="text-3xl "><img src='{{ 'assets/img/bolt.png' | relative_url }}'/> Bolt</h1>
+        <p class="text-lg light italic justify-center pt-sm">A minimalist framework for rapid website development.</p>
+        <p class="p-md mt-md">
+            <a href="https://github.com/jmgoodman27/Bolt" class="bg-white hover:bg-blue-dark text-blue-light font-bold py-xs px-sm rounded">Github</a>
         </p>
     </div>
 </section>
 <section>
-    <div class="container p-10 flex">
-        <div class="basis-7">
-            <h2>What is Bolt?</h2>
-            <p>Bolt is a framework for building fast, responsive websites using Jekyll, Sass, and <a class="_color-main" href="https://github.com/jmgoodman27/Bolt/blob/master/gulpfile.js">Gulp</a>.</p>
+    <div class="container p-xl flex flex-wrap">
+        <div class="md:flex-1">
+            <h2 class="text-xl">What is Bolt?</h2>
+            <p class="pt-md leading-normal">Bolt is a framework for building fast, responsive websites using tools including Jekyll, PostCSS, and Gulp.</p>
         </div>
-        <div class="flex justify-start marg-t-sm">
-            <img src="{{ 'assets/img/jekyll.png' | relative_url }}" alt="Jekyll">
-            <img src="{{ 'assets/img/sass.png' | relative_url }}" alt="Sass">
-            <img src="{{ 'assets/img/gulp.png' | relative_url }}" alt="Gulp">
+        <div class="flex sm:flex-1 max-w-lg sm:flex-wrap mt-sm">
+            <div class="sm:flex-1 max-w-sm text-center sm:max-w-full p-sm">
+                <img class="img-cover" src="{{ 'assets/img/jekyll.png' | relative_url }}" alt="Jekyll">
+            </div>
+            <div class="sm:flex-1 max-w-sm p-sm">
+                <img class="img-contain" src="{{ 'assets/img/postcss.png' | relative_url }}" alt="PostCSS">
+            </div>
+            <div class="sm:flex-1 max-w-sm p-sm">
+                <img class="img-contain" src="{{ 'assets/img/gulp.png' | relative_url }}" alt="Gulp">
+            </div>
         </div>
-    </div>
-</section>
-<section class="b-color-main color-white">
-    <div class="flex flex-auto">
-        <div>
-            <h3>Simplicity</h3>
-            <p>Bolt is minimalistic in structure and design, making it extremely easy to pick up and build upon.</p>
-        </div>
-        <div>
-            <h3>Performance</h3>
-            <p>Built for performance, Bolt uses Gulp to optimize CSS and image files for production builds.</p>
-        </div>
-        <div>
-            <h3>Maintainability</h3>
-            <p>Bolt makes use of HTML templating with Jekyll and Atomic CSS with Sass to promote better maintainability.</p>
-        </div>
-    </div>
-</section>
-<section class="b-color-grey">
-    <div>
-        <h2>Blog Ready</h2>
-        <p>Bolt makes it insanely easy to add blog posts without writing any additional code.</p>
-          {% for post in site.posts limit:4 %}
-          <a href="{{ post.url | relative_url }}">
-              <div class="BlogPost">
-                  <h4>{{ post.title }}</h4>
-                  {% if post.description %}<p>{{ post.description }}</p>{% else %}<p>{{ post.excerpt | strip_html }}</p>{% endif %}
-              </div>
-          </a>
-          {% endfor %}
-          <p><a href="{{ "blog/all" | relative_url }}">Read All Posts ></a></p>
-    </div>
-</section>
-<section>
-    <div>
-        <h2>Built-In Syntax Highlighting</h2>
-        <div class="code-lg">
-            {% highlight html %}
-<section class="b-color-main">
-    <div class="color-white center">
-        <h1 class="h0"><img src='/assets/img/bolt.png' /> Bolt</h1>
-        <p class="p1 light italic">A minimilist framework for rapid website development.</p>
-        <p>
-            <a href="https://github.com/jmgoodman27/Bolt" class="BtnWhite">Github</a>
-        </p>
-    </div>
-</section>
-            {% endhighlight %}
-        </div>
-    </div>
-</section>
-<section class="b-color-grey">
-    <div>
-        <h2>Contact Forms</h2>
-        <p>Easy forms set up with <a href="https://formspree.io/"><span class="underline">Formspree</span></a></p>
-        {% include form.html %}
     </div>
 </section>
